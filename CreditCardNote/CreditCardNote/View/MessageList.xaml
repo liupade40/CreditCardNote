@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CreditCardNote"
+             x:Class="CreditCardNote.View.MessageList" Title="消息"  Icon="ic_question_answer_black_24px">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_help_white_24px" Text="?" Clicked="Help_OnClicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TimeConver x:Key="cvtDate"/>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <StackLayout>
+        <ListView x:Name="list" ItemSelected="List_ItemSelected">
+            <ListView.RowHeight>
+                <OnPlatform x:TypeArguments="x:Int32">
+                    <On Platform="iOS, Android" Value="80" />
+                    <On Platform="UWP" Value="90" />
+                </OnPlatform>
+            </ListView.RowHeight>
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="5">
+                            <Frame OutlineColor="Accent"
+                               Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="￥"
+                                           FontSize="22"
+                                           VerticalOptions="StartAndExpand" />
+                                            <Label Text="{Binding Money}"
+                                           FontSize="22"
+                                           VerticalOptions="StartAndExpand" />
+                                        </StackLayout>
+                                       
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="{Binding ShortNumber}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+
+                                            <Label Text="{Binding BankType}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+                                            <Label Text="{Binding CostDate,Converter={StaticResource cvtDate}}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                       
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Button Clicked="Load" IsVisible="False" x:Name="btn" Text="加载更多"></Button>
+            </ListView.Footer>
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>

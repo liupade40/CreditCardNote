@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCardNote.View.Feedback" Title="建议与反馈">
+    <ContentPage.Content>
+        <StackLayout Padding="5,10">
+            <Editor  x:Name="Content" HeightRequest="200">
+                
+            </Editor>
+            <Button Text="提交" Clicked="Submit"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

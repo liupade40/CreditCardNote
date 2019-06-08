@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCardNote.View.AddCreditCard">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">姓名:</Label>
+                <Entry Grid.Column="1" Text="{Binding Username}" Grid.ColumnSpan="2"></Entry>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0">卡号:</Label>
+                <Entry Grid.Row="1" Text="{Binding CardNumber}" Keyboard="Numeric" Grid.Column="1"></Entry>
+                <Button Grid.Row="1" Grid.Column="2" Clicked="Button_CameraClicked" Image="ic_camera_alt_black_24px" Text="拍照"></Button>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="0">银行:</Label>
+                <Picker Title="选择银行" SelectedItem="{Binding BankName}" x:Name="BankTypeList" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1"></Picker>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="0">有效期:</Label>
+                <Entry  VerticalOptions="CenterAndExpand" Placeholder="格式：MM/YY" Text="{Binding CardEndDate}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                </Entry>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0">账单日:</Label>
+                <Entry VerticalOptions="CenterAndExpand" Keyboard="Numeric"  Text="{Binding StatementDate}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></Entry>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="0">还款日:</Label>
+                <Entry  VerticalOptions="CenterAndExpand" Keyboard="Numeric" Text="{Binding RepaymentDate}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"></Entry>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="0">短信号码:</Label>
+                <Entry Placeholder="银行发送消费短信的号码" Keyboard="Numeric" Text="{Binding BankPhone}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"></Entry>
+                <Label IsVisible="False" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="7" Grid.Column="0">银行卡类型:</Label>
+                <Entry IsVisible="False" Text="{Binding BankCardType}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"></Entry>
+            </Grid>
+            <Button Clicked="Button_SaveClicked" Text="保存"></Button>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

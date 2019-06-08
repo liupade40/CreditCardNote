@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCardNote.View.MessageDetail" Title="短信详情">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">尾号:</Label>
+                <Label VerticalTextAlignment="Center"  Grid.Column="1" Text="{Binding ShortNumber}"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0">银行:</Label>
+                <Label VerticalTextAlignment="Center"  Grid.Row="1" Text="{Binding BankType}" Grid.Column="1"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="0">金额(￥):</Label>
+                <Label VerticalTextAlignment="Center"  Grid.Row="2" Text="{Binding Money}" Grid.Column="1"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center"   Grid.Row="3" Grid.Column="0">短信时间:</Label>
+                <Label VerticalTextAlignment="Center"  Text="{Binding AddTime,StringFormat=\{0:yyyy-MM-dd HH:mm:ss\}}" Grid.Row="3" Grid.Column="1">
+                </Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0">关联卡号:</Label>
+                <Button x:Name="btn" Clicked="btn_Click" Grid.Row="4" Grid.Column="1"></Button>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="0">短信内容:</Label>
+                <Label VerticalTextAlignment="Center"  Text="{Binding Content}" Grid.Row="5" Grid.Column="1">
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

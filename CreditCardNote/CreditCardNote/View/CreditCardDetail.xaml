@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCardNote.View.CreditCardDetail" Title="信用卡详情">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">姓名:</Label>
+                <Label VerticalTextAlignment="Center" Grid.Column="1" Text="{Binding Username}" Grid.ColumnSpan="2"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0">卡号:</Label>
+                <Label VerticalTextAlignment="Center" Grid.Row="1" Text="{Binding CardNumber}" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="0">银行:</Label>
+                <Label VerticalTextAlignment="Center" Text="{Binding BankName}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1"></Label>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="0">有效期:</Label>
+                <Label  VerticalTextAlignment="Center" Text="{Binding CardEndDate}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                </Label>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0">账单日:</Label>
+                <Label VerticalTextAlignment="Center" Text="{Binding StatementDate}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                <Label x:Name="Statement" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="0">还款日:</Label>
+                <Label  VerticalTextAlignment="Center" Text="{Binding RepaymentDate}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                <Label  x:Name="Repayment" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                <Label VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" Grid.Row="8" Grid.Column="0">短信号码:</Label>
+                <Label VerticalTextAlignment="Center" Text="{Binding BankPhone}" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

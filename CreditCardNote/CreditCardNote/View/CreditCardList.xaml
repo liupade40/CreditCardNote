@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCardNote.View.CreditCardList" Title="信用卡"  Icon="ic_credit_card_black_24px">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_add_white_24px" Text="+" Clicked="MenuItem_OnClicked">
+        </ToolbarItem>
+        <!--<ToolbarItem Icon="ic_clear_white_24px" Text="X" Clicked="Clear_OnClicked">
+        </ToolbarItem>-->
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="list" ItemSelected="List_ItemSelected">
+            <ListView.RowHeight>
+                <OnPlatform x:TypeArguments="x:Int32">
+                    <On Platform="iOS, Android" Value="80" />
+                    <On Platform="UWP" Value="90" />
+                </OnPlatform>
+            </ListView.RowHeight>
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="5">
+                            <Frame OutlineColor="Accent"
+                               Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="{Binding CardNumber}"
+                                           FontSize="22"
+                                           VerticalOptions="StartAndExpand" />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="{Binding BankName}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+
+                                            <Label Text="{Binding RepaymentDate}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+                                            <Label Text="{Binding StatementDate}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+
+                                            
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
